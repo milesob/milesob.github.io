@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <title>Programming Bottom-Up | Listen to Paul Graham Essays</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Programming Bottom-Up 1993 (This essay is from the introduction to On Lisp.  The red textexplains the origins of Arc‘s name.)It’s a long-standing principle of programming style that the functionalelem">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Programming Bottom-Up">
+<meta property="og:url" content="http://helioindustries.com/2017/05/03/Programming-Bottom-Up/index.html">
+<meta property="og:site_name" content="Listen to Paul Graham Essays">
+<meta property="og:description" content="Programming Bottom-Up 1993 (This essay is from the introduction to On Lisp.  The red textexplains the origins of Arc‘s name.)It’s a long-standing principle of programming style that the functionalelem">
+<meta property="og:updated_time" content="2017-05-03T20:21:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Programming Bottom-Up">
+<meta name="twitter:description" content="Programming Bottom-Up 1993 (This essay is from the introduction to On Lisp.  The red textexplains the origins of Arc‘s name.)It’s a long-standing principle of programming style that the functionalelem">
+  
+    <link rel="alternate" href="/atom.xml" title="Listen to Paul Graham Essays" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+</head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-Programming-Bottom-Up" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/essays">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Programming Bottom-Up
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <p>Programming Bottom-Up</p>
+<p>1993</p>
+<p><i>(This essay is from the introduction to </i><a href="onlisp.html">On Lisp</a>.<i>  The red text<br>explains the origins of <a href="arc.html">Arc</a>‘s name.)</i><br><br>It’s a long-standing principle of programming style that the functional<br>elements of a program should not be too large.  If some component of a<br>program grows beyond the stage where it’s readily comprehensible,<br>it becomes a mass of complexity which conceals errors as easily<br>as a big city conceals fugitives.  Such software will be<br>hard to read, hard to test, and hard to debug.<br><br>In accordance with this principle, a large program must be divided<br>into pieces, and the larger the program, the more it must be divided.<br>How do you divide a program?  The traditional approach is<br>called <i>top-down design:</i> you say “the purpose of the<br>program is to do these seven things, so I divide it into seven major<br>subroutines.  The first subroutine has to do these four things, so<br>it in turn will have four of its own subroutines,” and so on.<br>This process continues until the whole program has the right level<br>of granularity– each part large enough to do something substantial,<br>but small enough to be understood as a single unit.<br><br>Experienced Lisp programmers divide up their programs differently.<br>As well as top-down design, they follow a principle which<br>could be called <i>bottom-up design</i>– changing the language<br>to suit the problem.<br>In Lisp, you don’t just write your program down toward the language,<br>you also build the language up toward your program.  As you’re<br>writing a program you may think “I wish Lisp had such-and-such an<br>operator.” So you go and write it. Afterward<br>you realize that using the new operator would simplify the design<br>of another part of the program, and so on.<br>Language and program evolve together.<br>Like the border between two warring states,<br>the boundary between language and program is drawn and redrawn,<br>until eventually it comes to rest along the mountains and rivers,<br>the natural frontiers of your problem.<br>In the end your program will look as if the language had been<br>designed for it.<br>And when language and<br>program fit one another well, you end up with code which is<br>clear, small, and efficient.<br><br><font color="#880000"><br>It’s worth emphasizing that bottom-up design doesn’t mean<br>just writing the same program in a different order.  When you<br>work bottom-up, you usually end up with a different program.<br>Instead of a single, monolithic program,<br>you will get a larger language with more abstract operators,<br>and a smaller program written in it.  Instead of a lintel,<br>you’ll get an arch.<br></font><br><br>In typical code, once you abstract out the parts which are<br>merely bookkeeping, what’s left is much shorter;<br>the higher you build up the language, the less distance you<br>will have to travel from the top down to it.<br>This brings several advantages:<br><br></p><ol><p></p>
+<p><li> By making the language do more of the work, bottom-up design<br>yields programs which are smaller and more agile.  A shorter<br>program doesn’t have to be divided into so many components, and<br>fewer components means programs which are easier to read or<br>modify.  Fewer components also means fewer connections between<br>components, and thus less chance for errors there.  As<br>industrial designers strive to reduce the number of moving parts<br>in a machine, experienced Lisp programmers use bottom-up design<br>to reduce the size and complexity of their programs.<br><br></li><li> Bottom-up design promotes code re-use.<br>When you write two<br>or more programs, many of the utilities you wrote for the first<br>program will also be useful in the succeeding ones.  Once you’ve<br>acquired a large substrate of utilities, writing a new program can<br>take only a fraction of the effort it would require if you had to<br>start with raw Lisp.<br><br></li><li> Bottom-up design makes programs easier to read.<br><!--
+%It yields the same result as top-down design
+%with foresight---the foresight to arrange the branches near the
+%root of the tree so that among the leaves there is as little
+%duplication of effort as possible.
+--><br>An instance of this type<br>of abstraction asks the reader to understand a general-purpose operator;<br>an instance of functional abstraction asks the reader to understand<br>a special-purpose subroutine. [1]<br><br></li><li> Because it causes you always to be on the lookout for patterns<br>in your code, working bottom-up helps to clarify your ideas about<br>the design of your program.  If two distant components of a program<br>are similar in form, you’ll be led to notice the similarity and<br>perhaps to redesign the program in a simpler way.<br></li></p></ol><p></p>
+<p></p><p align="justif"><br>Bottom-up design is possible to a certain degree in languages<br>other than Lisp.  Whenever you see library functions,<br>bottom-up design is happening.  However, Lisp gives you much broader<br>powers in this department, and augmenting the language plays a<br>proportionately larger role in Lisp style– so much so that<br>Lisp is not just a different language, but a whole different way<br>of programming.<br><br>It’s true that this style of development is better suited to<br>programs which can be written by small groups.  However, at the<br>same time, it extends the limits of what can be done by a small<br>group.  In <i>The Mythical Man-Month</i>,<br>Frederick Brooks<br>proposed that the productivity of a group of programmers<br>does not grow linearly with its size.  As the size of the<br>group increases, the productivity of individual programmers<br>goes down.  The experience of Lisp programming<br>suggests a more cheerful way<br>to phrase this law: as the size of the group decreases, the<br>productivity of individual programmers goes up.<br>A small group wins, relatively speaking, simply because it’s<br>smaller.  When a small group also takes advantage of the<br>techniques that Lisp makes possible, it can<br><a href="avg.html">win outright</a>.<br><br><br><br><b>New:</b> <a href="onlisptext.html">Download On Lisp for Free</a>.<br><br><br><br></p><hr><br><br><br>[1] “But no one can read<br>the program without understanding all your new utilities.”<br>To see why such statements are usually mistaken,<br>see Section 4.8.<br><p></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2017/05/03/Programming-Bottom-Up/" class="article-date">
+  <time datetime="2017-05-03T19:31:29.000Z" itemprop="datePublished">2017-05-03</time>
+</a>
+        </li>
+        
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2017/04/19/Try-this/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Try this
+        
+      </div>
+    </a>
+  
+  
+    <span id="article-nav-older" class="article-nav-link-wrap older"></span>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
