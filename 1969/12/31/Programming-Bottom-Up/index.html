@@ -5,17 +5,17 @@
   
   <title>Programming Bottom-Up | Listen to Paul Graham Essays</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="PROGRAMMING BOTTOM-UP 1993 It’s a long-standing principle of programming style that the functional elements of a program should not be too large. If some component of a program grows beyond the stage">
+  <meta name="description" content="1993 It’s a long-standing principle of programming style that the functional elements of a program should not be too large. If some component of a program grows beyond the stage where it’s readily com">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Programming Bottom-Up">
 <meta property="og:url" content="http://helioindustries.com/1969/12/31/Programming-Bottom-Up/index.html">
 <meta property="og:site_name" content="Listen to Paul Graham Essays">
-<meta property="og:description" content="PROGRAMMING BOTTOM-UP 1993 It’s a long-standing principle of programming style that the functional elements of a program should not be too large. If some component of a program grows beyond the stage">
-<meta property="og:updated_time" content="2017-05-03T20:34:14.000Z">
+<meta property="og:description" content="1993 It’s a long-standing principle of programming style that the functional elements of a program should not be too large. If some component of a program grows beyond the stage where it’s readily com">
+<meta property="og:updated_time" content="2017-05-03T20:38:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Programming Bottom-Up">
-<meta name="twitter:description" content="PROGRAMMING BOTTOM-UP 1993 It’s a long-standing principle of programming style that the functional elements of a program should not be too large. If some component of a program grows beyond the stage">
+<meta name="twitter:description" content="1993 It’s a long-standing principle of programming style that the functional elements of a program should not be too large. If some component of a program grows beyond the stage where it’s readily com">
   
     <link rel="alternate" href="/atom.xml" title="Listen to Paul Graham Essays" type="application/atom+xml">
   
@@ -65,8 +65,7 @@
     
     <div class="article-entry typo" itemprop="articleBody">
       
-        <p>PROGRAMMING BOTTOM-UP</p>
-<p>1993</p>
+        <p>1993</p>
 <p>It’s a long-standing principle of programming style that the functional elements of a program should not be too large. If some component of a program grows beyond the stage where it’s readily comprehensible, it becomes a mass of complexity which conceals errors as easily as a big city conceals fugitives. Such software will be hard to read, hard to test, and hard to debug.</p>
 <p>In accordance with this principle, a large program must be divided into pieces, and the larger the program, the more it must be divided. How do you divide a program? The traditional approach is called top-down design: you say “the purpose of the program is to do these seven things, so I divide it into seven major subroutines. The first subroutine has to do these four things, so it in turn will have four of its own subroutines,” and so on. This process continues until the whole program has the right level of granularity– each part large enough to do something substantial, but small enough to be understood as a single unit.</p>
 <p>Experienced Lisp programmers divide up their programs differently. As well as top-down design, they follow a principle which could be called bottom-up design– changing the language to suit the problem. In Lisp, you don’t just write your program down toward the language, you also build the language up toward your program. As you’re writing a program you may think “I wish Lisp had such-and-such an operator.” So you go and write it. Afterward you realize that using the new operator would simplify the design of another part of the program, and so on. Language and program evolve together. Like the border between two warring states, the boundary between language and program is drawn and redrawn, until eventually it comes to rest along the mountains and rivers, the natural frontiers of your problem. In the end your program will look as if the language had been designed for it. And when language and program fit one another well, you end up with code which is clear, small, and efficient.</p>
