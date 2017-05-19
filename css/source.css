@@ -226,7 +226,7 @@ em {
   }
 
   hr {
-    width: 60%;
+    width: 91%;
     margin: 20px 0 40px 0;
     @extend hr-base;
     background-image: -webkit-linear-gradient(0deg, #d5d5d5, #d5d5d5, transparent);
